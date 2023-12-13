@@ -9,7 +9,8 @@ export const store=configureStore({
         auth:authReducer,
     },
     middleware:getDefaultMiddleware=>getDefaultMiddleware().concat(apiSlice.middleware),
-    devTools:'True'//to add redux devtools integration
+    //devTools:'True'//to add redux devtools integration
+    devTools:false//for deployment
 })
 
 setupListeners(store.dispatch)//for multiple people opening at the same time and updating
